@@ -17,6 +17,8 @@ if [[ $(pgrep "^compton") ]]; then
 fi
 compton -cfb &
 
+feh --bg-fill ~/.wallpaper.jpg
+
 #run our own custom panel
 if [[ $(pgrep "^panel") ]]; then
 	pkill panel;
