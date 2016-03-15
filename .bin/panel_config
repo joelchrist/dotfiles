@@ -1,0 +1,21 @@
+PANEL_FIFO=/tmp/panel-fifo
+
+#dimensions
+PANEL_HEIGHT=25
+PANEL_WIDTH=1650
+PANEL_X=15
+PANEL_Y=15
+
+
+#hardware
+WIFI_INTERFACE="wlp4s0"
+
+#refresh times in seconds
+REFRESH_CLOCK=30
+REFRESH_DATE=60
+REFRESH_WIFI=10
+#fonts
+PANEL_FONT="Terminess\ Powerline: size=9"
+ICON_FONT="FontAwesome:size=9"
+ICON_WIFI_CONNECTED='\uf1eb'
+ICON_WIFI_DISCONNECTED='\uf05e'

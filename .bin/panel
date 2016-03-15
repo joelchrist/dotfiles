@@ -1,0 +1,69 @@
+#!/bin/zsh
+#Custom panel script by Joel Christ
+#
+#Dependency's:
+#acpi
+#xtitle
+#lemonbar
+#
+
+. ~/.bin/panel_colors
+. ~/.bin/panel_config
+
+#check to see if panel is already running
+if [[ $(pgrep -cx panel) -gt 1 ]]; then
+	printf "%s\n" "The panel is already running." >&2
+	exit 1
+fi
+
+#exit gracefully if terminated
+trap 'trap - TERM; kill 0' INT TERM QUIT EXIT
+
+#remove old panel fifo and create a new one
+[ -e "$PANEL_FIFO" ] && rm "$PANEL_FIFO"
+mkfifo "$PANEL_FIFO"
+
+#set up bspwm to not overlap the panel
+bspc config top_padding $(($PANEL_HEIGHT + $PANEL_Y))
+
+#get bspwms status feed
+bspc control --subscribe > "$PANEL_FIFO" &
+
+#get the current window title
+xtitle -sf 'TITLE%s' > "$PANEL_FIFO" &
+
+#get the current time
+while true; do 
+	echo -e "TIME$(date +"%_H:%M")"
+	sleep $REFRESH_CLOCK
+done > "$PANEL_FIFO" &
+
+#get the current date
+while true; do 
+	echo -e "DATE$(date +'%a, %b %_d')"
+	sleep $REFRESH_DATE
+done > "$PANEL_FIFO" &
+
+#get the wifi signal strength and ssid
+while true; do 
+	WIFI_SSID=$(iw "$WIFI_INTERFACE" link | grep "SSID" | sed 's/SSID: //' | sed 's/\t//')
+	WIFI_SIGNAL=$(iw "$WIFI_INTERFACE" link | grep 'signal' | sed 's/signal: //' | sed 's/ dBm//' | sed 's/\t//')
+	if [[ $(iw "$WIFI_INTERFACE" link) != "Not connected." ]]; then
+		echo -e "LINK$ICON_WIFI_CONNECTED $WIFI_SSID"
+	else 
+		echo -e "LINK$ICON_WIFI_DISCONNECTED No connection"
+	fi
+	sleep $REFRESH_WIFI
+done > "$PANEL_FIFO" &
+
+#dump all the info into panel_bar and then into lemonbar itself
+~/.bin/panel_bar < "$PANEL_FIFO" | lemonbar \
+	-g "$PANEL_WIDTH"x"$PANEL_HEIGHT"+"$PANEL_X"+"$PANEL_Y" \
+	-f "$PANEL_FONT" \
+	-f "$ICON_FONT" \
+	-F "$COLOR_FOREGROUND" \
+	-B "$COLOR_BACKGROUND" \
+	-U "$COLOR_UNDERLINE" \
+	-u 2 \
+	| zsh &
+wait
