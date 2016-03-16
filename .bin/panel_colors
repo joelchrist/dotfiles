@@ -1,7 +1,3 @@
-getXresColor() {
-	echo -n "$( xrdb -query | grep "\*$1:" | grep -oE "#[a-zA-Z0-9]{6}" | cut -c 2- )";
-}
-
 COLOR_FOREGROUND="#FF$(getXresColor foreground)"
 COLOR_BACKGROUND="#FF$(getXresColor background)"
 COLOR_UNDERLINE="#FF$(getXresColor color1)"

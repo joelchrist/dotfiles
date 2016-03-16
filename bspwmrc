@@ -8,6 +8,9 @@ bspc config borderless_monocle  false
 bspc config gapless_monocle     false
 bspc config focus_by_distance   true
 
+bspc config presel_feedback_color "#$(getXresColor color1)"
+bspc config active_border_color "#$(getXresColor color1)"
+
 #set up the desired amount of workspaces
 bspc monitor -d I II III IV V VI VII VIII IX X
 
