@@ -5,7 +5,7 @@
 #acpi
 #xtitle
 #lemonbar
-#
+#bspwm
 
 . ~/.bin/panel_colors
 . ~/.bin/panel_config
@@ -32,6 +32,13 @@ bspc subscribe > "$PANEL_FIFO" &
 #get the current window title
 xtitle -sf 'TITLE%s' > "$PANEL_FIFO" &
 
+#get the current mem consumption
+while true; do 
+	USED_MEM=$(free | awk 'FNR == 2 {print $3/1000}' | cut -f1 -d".")
+	echo -e "MEM$ICON_MEM $USED_MEM MB"
+	sleep $REFRESH_MEM
+done > "$PANEL_FIFO" &
+
 #get the current time
 while true; do 
 	echo -e "TIME$(date +"%_H:%M")"
@@ -56,6 +63,14 @@ while true; do
 	sleep $REFRESH_WIFI
 done > "$PANEL_FIFO" &
 
+#get the battery level if the config file allows it
+if [[ $SHOW_BAT ]]; then
+	while true; do
+		BAT_LVL=$(cat "/sys/class/power_supply/$BAT_INTERFACE/capacity")
+		echo -e "BAT$ICON_BAT $BAT_LVL%"
+		sleep $REFRESH_BAT
+	done > "$PANEL_FIFO" &
+fi
 #dump all the info into panel_bar and then into lemonbar itself
 ~/.bin/panel_bar < "$PANEL_FIFO" | lemonbar \
 	-g "$PANEL_WIDTH"x"$PANEL_HEIGHT"+"$PANEL_X"+"$PANEL_Y" \
@@ -63,7 +78,6 @@ done > "$PANEL_FIFO" &
 	-f "$ICON_FONT" \
 	-F "$COLOR_FOREGROUND" \
 	-B "$COLOR_BACKGROUND" \
-	-U "$COLOR_UNDERLINE" \
 	-u 2 \
 	| zsh &
 wait
