@@ -14,13 +14,34 @@ super + space
 super + Escape
 	pkill -USR1 -x sxhkd
 
+super + ctrl + Return
+	xdotool search --onlyvisible --classname scratchpad windowunmap || xdotool search --classname scratchpad windowmap || urxvt -name scratchpad
+
+super + shift + t
+	~/.bin/touchpad.sh
+
+XF86AudioLowerVolume
+	amixer set Master 3%-
+
+XF86AudioRaiseVolume
+	amixer set Master 3%+
+
+XF86MonBrightnessUp
+	xbacklight -inc 10%
+
+XF86MonBrightnessDown
+	xbacklight -dec 10%
+
+super + shift + Escape
+	~/.bin/lock
+
 #
 # bspwm hotkeys
 #
 
 # quit bspwm normally
 super + alt + Escape
-	bspc quit
+	pkill panel; bspc quit
 
 # close and kill
 super + {_,shift + }q

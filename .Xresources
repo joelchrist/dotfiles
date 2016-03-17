@@ -6,7 +6,13 @@ URxvt.iso14755_52: false
 ! Make urxvt look good
 URxvt.internalBorder: 10
 !fonts
-URxvt*font: xft: Terminess\ Powerline:size=9:antialias=true:hinting:true
-rofi.font: Terminess\ Powerline 9
+URxvt*font: xft: Terminus:size=9:antialias=true:hinting:true
+rofi.font: Terminus 9
+
+
+!Xautolock config
+Xautolock.locker: "lock"
+Xautolock.time: 5
+
 
 #include "/home/joelchrist/.xcolors/hybrid"

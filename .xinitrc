@@ -11,5 +11,7 @@ if [ -f "$usermodmap" ]; then
 fi
 export _JAVA_AWT_WM_NONREPARENTING=1
 xsetroot -cursor_name left_ptr
+xautolock &
+dropbox &
 sxhkd &
 exec bspwm
