@@ -14,7 +14,8 @@ bspc config active_border_color "#$(getXresColor color1)"
 #set up the desired amount of workspaces
 bspc monitor -d I II III IV V VI VII VIII IX X
 
-bspc rule -a scratchpad sticky=on state=floating
+bspc rule -a URxvt:scratchpad sticky=on state=floating
+bspc rule -a URxvt:todo state=floating
 #Run compton as a composite manager
 if [[ $(pgrep "^compton") ]]; then
 	kill $(pgrep "^compton");
