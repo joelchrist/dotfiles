@@ -39,6 +39,13 @@ while true; do
 	sleep $REFRESH_MEM
 done > "$PANEL_FIFO" &
 
+#get the current cpu temperature
+while true; do
+	CPU_TEMP=$(sensors | awk 'FNR == 3 {print $2}')
+	echo -e "CPU$ICON_CPU $CPU_TEMP"
+	sleep $REFRESH_CPU
+done > "$PANEL_FIFO" &
+
 #get the current time
 while true; do 
 	echo -e "TIME$(date +"%_H:%M")"
@@ -47,7 +54,7 @@ done > "$PANEL_FIFO" &
 
 #get the current date
 while true; do 
-	echo -e "DATE$(date +'%a, %b %_d')"
+	echo -e "DATE%{A:urxvt -name todo -e 'todo':}$(date +'%a, %b %_d')%{A}"
 	sleep $REFRESH_DATE
 done > "$PANEL_FIFO" &
 
@@ -66,10 +73,23 @@ done > "$PANEL_FIFO" &
 #get the battery level if the config file allows it
 if [[ $SHOW_BAT ]]; then
 	while true; do
+		POWER_CONNECTED=$(cat /sys/class/power_supply/AC/online)
 		BAT_LVL=$(cat "/sys/class/power_supply/$BAT_INTERFACE/capacity")
-		echo -e "BAT$ICON_BAT $BAT_LVL%"
+		if [[ $POWER_CONNECTED -eq 1 ]]; then
+			echo -e "BAT$ICON_POWER $BAT_LVL%"
+		else
+			echo -e "BAT$ICON_BAT $BAT_LVL%"
+		fi
 		sleep $REFRESH_BAT
 	done > "$PANEL_FIFO" &
+fi
+
+
+if [[ $SHOW_SOUND ]]; then
+	while true; do 
+
+		sleep $REFRESH_SOUND
+	done > "$PANEL_FIFO" &	
 fi
 #dump all the info into panel_bar and then into lemonbar itself
 ~/.bin/panel_bar < "$PANEL_FIFO" | lemonbar \
