@@ -30,12 +30,12 @@ bspc config top_padding $(($PANEL_HEIGHT + $PANEL_Y))
 bspc subscribe > "$PANEL_FIFO" &
 
 #get the current window title
-xtitle -sf 'TITLE%s' > "$PANEL_FIFO" &
+xtitle -s -t 50 -f 'TITLE%s' > "$PANEL_FIFO" &
 
 #get the current mem consumption
 while true; do 
 	USED_MEM=$(free | awk 'FNR == 2 {print $3/1000}' | cut -f1 -d".")
-	echo -e "MEM$ICON_MEM $USED_MEM MB"
+	echo -e "MEM%{A:urxvt -name htop -e htop:}$ICON_MEM $USED_MEM MB%{A}"
 	sleep $REFRESH_MEM
 done > "$PANEL_FIFO" &
 

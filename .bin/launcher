@@ -1,0 +1,1 @@
+dmenu_run -i -h 768 -w 1366 -q -l -l0 -o .85 -p "      execute" -fn "Terminus" -nb "#$(getXresColor background)" -nf "#FFFFFF" -sb "#$(getXresColor background)" -sf "#7E7F89"

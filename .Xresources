@@ -9,6 +9,7 @@ URxvt.internalBorder: 10
 URxvt*font: xft:Terminess\ Powerline:size=9:antialias=true:hinting:true
 
 rofi.font: Terminus 9
+rofi.location: 7
 
 
 !Xautolock config
