@@ -14,4 +14,5 @@ xsetroot -cursor_name left_ptr
 xautolock &
 dropbox &
 sxhkd &
+numlockx &
 exec bspwm

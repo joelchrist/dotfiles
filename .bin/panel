@@ -6,6 +6,8 @@
 #xtitle
 #lemonbar
 #bspwm
+#iw
+#
 
 . ~/.bin/panel_colors
 . ~/.bin/panel_config

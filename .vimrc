@@ -30,6 +30,12 @@ Plugin 'kien/ctrlp.vim'
 "HTML autocomplete
 Plugin 'alvan/vim-closetag'
 
+"Use maven in vim
+Plugin 'mikelue/vim-maven-plugin'
+
+"Get root directory
+Plugin 'airblade/vim-rooter'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 
@@ -55,7 +61,7 @@ set wildignore+=*/build/**
 let g:ctrlp_use_caching=0
 
 "Complete html tags in  filenames like *.xml, *.html, *.xhtml, ...
-let g:closetag_filenames = "*.html,*.xhtml,*.phtml"
+let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.xml"
 
 "Easy split navigation
 nnoremap <C-J> <C-W><C-J>
@@ -63,8 +69,7 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+
 "More natural splitting
 set splitbelow
-
-
 set splitright
