@@ -33,6 +33,8 @@ fi
 
 
 #Enable horizontal scrolling
-synclient HorizTwoFingerScroll=1
+if [[ $(hostname) = "SchoolPC" ]]; then
+	synclient HorizTwoFingerScroll=1
+fi
 
 
