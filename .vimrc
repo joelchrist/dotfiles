@@ -10,7 +10,8 @@ Plugin 'VundleVim/Vundle.vim'
 "
 "Hybrid colorscheme
 Plugin 'scwood/vim-hybrid'
-
+"Plugin 'jdkanani/vim-material-theme'
+"
 "Snippets based on language and current file
 Plugin 'valloric/YouCompleteMe'
 
@@ -36,6 +37,8 @@ Plugin 'mikelue/vim-maven-plugin'
 "Get root directory
 Plugin 'airblade/vim-rooter'
 
+"Show colors when editing
+Plugin 'ap/vim-css-color'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 

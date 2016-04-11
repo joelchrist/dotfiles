@@ -15,4 +15,5 @@ xautolock &
 dropbox &
 sxhkd &
 numlockx &
+insync start & 
 exec bspwm

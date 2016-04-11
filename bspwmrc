@@ -23,7 +23,7 @@ if [[ $(pgrep "^compton") ]]; then
 fi
 compton -cfb &
 
-feh --bg-fill ~/.wallpapers/.current
+feh --bg-fill ~/.wallpapers/current.png
 
 #run our own custom panel
 if [[ $(pgrep "^panel") ]]; then
