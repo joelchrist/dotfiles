@@ -1,0 +1,2 @@
+~/.alienfiles/bspwmrc
+

@@ -2,9 +2,9 @@ PANEL_FIFO=/tmp/panel-fifo
 
 #dimensions
 PANEL_HEIGHT=25
-PANEL_WIDTH=1336
-PANEL_X=15
-PANEL_Y=15
+PANEL_WIDTH=1340
+PANEL_X=13
+PANEL_Y=13
 
 
 #hardware

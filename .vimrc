@@ -10,6 +10,8 @@ Plugin 'VundleVim/Vundle.vim'
 "
 "Hybrid colorscheme
 Plugin 'scwood/vim-hybrid'
+
+"Plugin 'nicklasos/numix-molokai'
 "Plugin 'jdkanani/vim-material-theme'
 "
 "Snippets based on language and current file
@@ -31,8 +33,6 @@ Plugin 'kien/ctrlp.vim'
 "HTML autocomplete
 Plugin 'alvan/vim-closetag'
 
-"Use maven in vim
-Plugin 'mikelue/vim-maven-plugin'
 
 "Get root directory
 Plugin 'airblade/vim-rooter'
@@ -76,3 +76,19 @@ nnoremap <C-H> <C-W><C-H>
 "More natural splitting
 set splitbelow
 set splitright
+
+" show existing tab with 4 spaces width
+set tabstop=4
+" " when indenting with '>', use 4 spaces width
+set shiftwidth=4
+" " On pressing tab, insert 4 spaces
+set expandtab
+
+"no visual wrapping
+set nowrap
+
+if &term =~ '256color'
+    " Disable Background Color Erase (BCE) so that color schemes
+    "     " work properly when Vim is used inside tmux and GNU screen.
+    set t_ut=
+endif
