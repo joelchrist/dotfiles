@@ -1,10 +1,12 @@
 PANEL_FIFO=/tmp/panel-fifo
 
 #dimensions
-PANEL_HEIGHT=25
-PANEL_WIDTH=1340
+read RES_X RES_Y <<<$(xdpyinfo | awk -F'[ x]+' '/dimensions:/{print $3, $4}')
+
 PANEL_X=13
 PANEL_Y=13
+PANEL_WIDTH=$((RES_X-PANEL_X-PANEL_X))
+PANEL_HEIGHT=25
 
 
 #hardware

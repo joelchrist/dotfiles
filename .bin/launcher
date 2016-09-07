@@ -1,1 +1,2 @@
-dmenu_run -i -h 768 -w 1366 -q -l -l0 -o .85 -p "      execute" -fn "Terminus" -nb "#$(getXresColor background)" -nf "#FFFFFF" -sb "#$(getXresColor background)" -sf "#7E7F89"
+read RES_X RES_Y <<<$(xdpyinfo | awk -F'[ x]+' '/dimensions:/{print $3, $4}')
+dmenu_run -i -h $RES_Y -w $RES_X -q -l -l0 -o .85 -p "      execute" -fn "Terminus" -nb "#$(getXresColor background)" -nf "#FFFFFF" -sb "#$(getXresColor background)" -sf "#7E7F89"

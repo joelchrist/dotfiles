@@ -20,6 +20,9 @@ super + ctrl + Return
 super + shift + t
 	~/.bin/touchpad.sh
 
+XF86AudioMute
+    amixer set Master toggle
+
 XF86AudioLowerVolume
 	amixer set Master 3%-
 
@@ -98,6 +101,9 @@ super + {_,shift + }c
 # focus the next/previous desktop
 super + bracket{left,right}
 	bspc desktop -f {prev,next}
+
+super + {Left, Right}
+    bspc desktop -f {prev, next}
 
 # focus the last node/desktop
 super + {grave,Tab}
