@@ -1,6 +1,0 @@
-COLOR_FOREGROUND="#FF$(getXresColor foreground)"
-COLOR_BACKGROUND="#FF$(getXresColor background)"
-COLOR_UNDERLINE="#FF$(getXresColor color4)"
-
-COLOR_OCCUPIED_FG="#FF$(getXresColor foreground)"
-COLOR_FREE_FG="#FF$(getXresColor color7)"

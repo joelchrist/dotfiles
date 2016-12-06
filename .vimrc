@@ -7,6 +7,8 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'metakirby5/codi.vim'
 "
 "Hybrid colorscheme
 Plugin 'scwood/vim-hybrid'
@@ -40,6 +42,10 @@ Plugin 'airblade/vim-rooter'
 "Show colors when editing
 Plugin 'ap/vim-css-color'
 " All of your Plugins must be added before the following line
+
+Plugin 'Quramy/tsuquyomi'
+
+Plugin 'Shougo/vimproc'
 call vundle#end()            " required
 
 filetype plugin indent on    " required
@@ -54,6 +60,8 @@ colorscheme hybrid
 set relativenumber number
 "Place cursor between to expendad curly brackets on a new line.
 let delimitMate_expand_cr = 1
+
+set backspace=indent,eol,start
 
 "Map nerdtree to leader d
 nmap <leader>d :NERDTreeToggle<CR>

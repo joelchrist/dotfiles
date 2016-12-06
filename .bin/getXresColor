@@ -1,3 +1,0 @@
-#!/bin/sh
-echo -n "$( xrdb -query | grep "\*$1:" | grep -oE "#[a-zA-Z0-9]{6}" | cut -c 2- )";
-
