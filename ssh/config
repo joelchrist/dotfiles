@@ -1,0 +1,15 @@
+Host home
+    HostName home.joelchrist.nl
+    Port 3985
+    User joelchrist
+
+Host droplet
+    HostName joelchrist.nl
+    Port 22
+    User administrator
+
+Host home-local
+    HostName 192.168.1.44
+    Port 22
+    User joelchrist
+
