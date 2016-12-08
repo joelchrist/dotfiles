@@ -1,0 +1,6 @@
+{
+  "name": "Dotfiles",
+  "tagline": "",
+  "body": "##Description\r\nA place where I store all my configuration files for my systems. I will try to keep these as up-to-date as possible. There are branches depending on different configurations. The ```mac_osx``` branch will, as expected, contain configuration files for my OSX setup.\r\n\r\n##Feedback\r\nIf you feel like there is something in these files that shouldn't be there or I could do differently feel free to create an issue. For questions you can always email me.",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
