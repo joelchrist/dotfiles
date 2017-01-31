@@ -3,3 +3,7 @@ alias la="ls -la"
 
 
 alias ls="ls -G";
+
+alias start-dev='tmuxinator'
+
+alias vim=nvim
