@@ -12,4 +12,7 @@ Host home-local
     HostName 192.168.1.44
     Port 22
     User joelchrist
-
+Host nots-team
+    HostName joelchrist.nl
+    Port 22
+    User notsteam

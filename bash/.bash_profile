@@ -1,4 +1,5 @@
 PATH=/usr/local/sbin:$PATH
+PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 export PATH
 
 # Load the shell dotfiles, and then some:
@@ -22,3 +23,11 @@ if [ -f /usr/local/share/gitprompt.sh ]; then
   . /usr/local/share/gitprompt.sh
 fi
 
+function tm() {
+  if [ "$1" = "ls" ]; then
+    tmux list-sessions;
+  else
+    tmux attach -t $1 || tmux new -s $1;
+  fi
+}
+eval $(/usr/libexec/path_helper -s)
