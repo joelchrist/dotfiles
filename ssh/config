@@ -16,3 +16,19 @@ Host nots-team
     HostName joelchrist.nl
     Port 22
     User notsteam
+Host nots-puppet
+    HostName 188.226.153.77
+    Port 22
+    User administrator
+Host nots-jenkins
+    HostName 95.85.29.164
+    Port 22
+    User administrator
+Host nots-deploy
+    HostName 95.85.50.197
+    Port 22
+    User administrator
+Host nots-registry
+    HostName 146.185.163.36
+    Port 22
+    User administrator
