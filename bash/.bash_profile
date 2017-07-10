@@ -21,10 +21,6 @@ export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PR
 
 export EDITOR=nvim
 
-if [ -f /usr/local/share/gitprompt.sh ]; then
-  GIT_PROMPT_THEME=Default
-  . /usr/local/share/gitprompt.sh
-fi
 
 function tm() {
   if [ "$1" = "ls" ]; then

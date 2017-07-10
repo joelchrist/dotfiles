@@ -32,3 +32,8 @@ Host nots-registry
     HostName 146.185.163.36
     Port 22
     User administrator
+Host dirhoek
+    Hostname dirhoek.develop.moreapps.nl
+    User ubuntu
+    IdentityFile ~/.ssh/development-keypair.pem
+    RemoteForward 9002 localhost:80
