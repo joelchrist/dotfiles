@@ -1,82 +1,88 @@
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+""""""
+" UI "
+""""""
 
-Plugin 'VundleVim/Vundle.vim'
+" disable vi compatibility
+set nocompatible
 
-Plugin 'scwood/vim-hybrid'
+" automatically load changed files
+set autoread
 
-Plugin 'airblade/vim-gitgutter'
+" auto-reload vimrc
+autocmd! bufwritepost .vimrc source ~/.vimrc
+"autocmd! bufwritepost gvimrc source ~/.vim/gvimrc
 
-Plugin 'scrooloose/nerdtree'
-
-Plugin 'kien/ctrlp.vim'
-
-Plugin 'raimondi/delimitmate'
-
-Plugin 'Valloric/YouCompleteMe'
-
-Plugin 'unblevable/quick-scope'
-
-Plugin 'christoomey/vim-tmux-navigator'
-
-Plugin 'jelera/vim-javascript-syntax'
-
-Plugin 'scrooloose/syntastic'
-
-Plugin 'marijnh/tern_for_vim'
-
-call vundle#end()
-
-filetype plugin indent on
-
-set t_Co=256
-syntax on
-set background=dark
-colorscheme hybrid
-set relativenumber number
-
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
-
-set splitbelow
-set splitright
-
-set tabstop=2
-set shiftwidth=2
-set expandtab
-
-set nowrap
-
-if &term =~ '256color'
-    set t_ut=
-endif
-
+"Allow backspace to work like in most programs
 set backspace=indent,eol,start
 
-nmap <leader>d :NERDTreeToggle<CR>
+" set encoding
+set encoding=utf-8
 
-let delimitMate_expand_cr = 1
-
-let g:ctrlp_map = '<leader>t'
-let g:ctrlp_use_caching=1
-
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/target/*
-let g:ctrlp_custom_ignore='node_modules'
-
-nnoremap <leader>gg :YcmCompleter GoToDefinition<CR>
-
-command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
-
-set clipboard=unnamed
-
-let g:tmux_navigator_save_on_switch = 2
-
-let g:syntastic_check_on_open=1
-
-let g:ycm_add_preview_to_completeopt=0
-let g:ycm_confirm_extra_conf=0
-set completeopt-=preview
-
+" mouse support
 set mouse=a
+
+" line numbers
+set number
+set relativenumber
+
+" highlight cursor line
+set cursorline
+
+" ignore whitespace in diff mode
+set diffopt+=iwhite
+
+" Be able to arrow key and backspace across newlines
+set whichwrap=bs<>[]
+
+" Status bar
+set laststatus=2
+
+" remember last cursor position
+autocmd BufReadPost *
+	\ if line("'\"") > 0 && line("'\"") <= line("$") |
+	\ 	exe "normal g`\"" |
+	\ endif
+
+
+" make laggy connections work faster
+set ttyfast
+
+" let vim open up to 100 tabs at once
+set tabpagemax=100
+
+" case-insensitive filename completion
+set wildignorecase
+
+"""""""""""""
+" Searching "
+"""""""""""""
+
+set hlsearch "when there is a previous search pattern, highlight all its matches
+set incsearch "while typing a search command, show immediately where the so far typed pattern matches
+set ignorecase "ignore case in search patterns
+set smartcase "override the 'ignorecase' option if the search pattern contains uppercase characters
+set gdefault "imply global for new searches
+
+"""""""""""""
+" Indenting "
+"""""""""""""
+
+" When auto-indenting, use the indenting format of the previous line
+set copyindent
+" When on, a <Tab> in front of a line inserts blanks according to 'shiftwidth'.
+" 'tabstop' is used in other places. A <BS> will delete a 'shiftwidth' worth of
+" space at the start of the line.
+set smarttab
+" Copy indent from current line when starting a new line (typing <CR> in Insert
+" mode or when using the "o" or "O" command)
+set autoindent
+" Automatically inserts one extra level of indentation in some cases, and works
+" for C-like files
+set smartindent
+
+"""""""""
+" Theme "
+"""""""""
+
+syntax enable
+set background=dark "uncomment this if your terminal has a dark background

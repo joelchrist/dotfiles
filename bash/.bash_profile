@@ -1,5 +1,4 @@
 PATH=/usr/local/sbin:$PATH
-PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 export PATH
 
 # Load the shell dotfiles, and then some:
@@ -17,16 +16,7 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
 fi
 
-export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
-
-export EDITOR=nvim
-
-
-function tm() {
-  if [ "$1" = "ls" ]; then
-    tmux list-sessions;
-  else
-    tmux attach -t $1 || tmux new -s $1;
-  fi
-}
 eval $(/usr/libexec/path_helper -s)
+
+PATH=$HOME/.nvm/versions/node/v6.9.4/bin:$PATH
+export NVM_DIR="$HOME/.nvm"

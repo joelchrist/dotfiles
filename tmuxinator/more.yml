@@ -29,12 +29,6 @@ root: ~/Projects/avisi/moreapp
 # Runs after everything. Use it to attach to tmux with custom options etc.
 # post: tmux -CC attach -t more
 windows:
-  - editor:
-      layout: main-vertical
-      panes:
-        - vim
-        - guard
-windows:
   - run:
       layout: main-vertical
       panes:
@@ -42,5 +36,7 @@ windows:
         - (cd more/more/web-clients && gulp server)
         - (cd more/more/mobile-app/ionic-app && ionic serve)
           #      - (cd more/more/docker && docker-compose up)
+  - mongo:
+    - mongo moretestdb
   - shell:
   - git: 

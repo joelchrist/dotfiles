@@ -1,35 +1,5 @@
-Host home
-    HostName home.joelchrist.nl
-    Port 3985
-    User joelchrist
-
-Host droplet
+Host joelchrist.nl
     HostName joelchrist.nl
-    Port 22
-    User administrator
-
-Host home-local
-    HostName 192.168.1.44
-    Port 22
-    User joelchrist
-Host nots-team
-    HostName joelchrist.nl
-    Port 22
-    User notsteam
-Host nots-puppet
-    HostName 188.226.153.77
-    Port 22
-    User administrator
-Host nots-jenkins
-    HostName 95.85.29.164
-    Port 22
-    User administrator
-Host nots-deploy
-    HostName 95.85.50.197
-    Port 22
-    User administrator
-Host nots-registry
-    HostName 146.185.163.36
     Port 22
     User administrator
 Host dirhoek
@@ -37,3 +7,7 @@ Host dirhoek
     User ubuntu
     IdentityFile ~/.ssh/development-keypair.pem
     RemoteForward 9002 localhost:80
+Host api.d
+    Hostname api.develop.moreapp.com
+    User ubuntu
+    IdentityFile ~/.ssh/development-keypair.pem
