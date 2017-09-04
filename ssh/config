@@ -2,7 +2,7 @@ Host joelchrist.nl
     HostName joelchrist.nl
     Port 22
     User administrator
-Host dirhoek
+Host api.dt
     Hostname dirhoek.develop.moreapps.nl
     User ubuntu
     IdentityFile ~/.ssh/development-keypair.pem
@@ -11,3 +11,59 @@ Host api.d
     Hostname api.develop.moreapp.com
     User ubuntu
     IdentityFile ~/.ssh/development-keypair.pem
+Host mongo1.p
+    Hostname mongo1.moreapp.com
+    User ubuntu
+    IdentityFile ~/.ssh/amazonproduction-keypair.pem
+Host mongo2.p
+    Hostname mongo2.moreapp.com
+    User ubuntu
+    IdentityFile ~/.ssh/amazonproduction-keypair.pem
+Host mongo3.p
+    Hostname mongo3.moreapp.com
+    User ubuntu
+    IdentityFile ~/.ssh/amazonproduction-keypair.pem
+Host api1.p
+    Hostname api1.moreapp.com
+    User ubuntu
+    IdentityFile ~/.ssh/amazonproduction-keypair.pem
+Host api2.p
+    Hostname api2.moreapp.com
+    User ubuntu
+    IdentityFile ~/.ssh/amazonproduction-keypair.pem
+Host web.p
+    Hostname web.moreapp.com
+    User ubuntu
+    IdentityFile ~/.ssh/amazonproduction-keypair.pem
+Host puppet.moreapp.com
+    Hostname puppet.moreapp.com
+    User ubuntu
+    IdentityFile ~/.ssh/amazonproduction-keypair.pem
+Host monitor.p
+    Hostname monitor.moreapp.com
+    User ubuntu
+    IdentityFile ~/.ssh/amazonproduction-keypair.pem
+Host api1.s
+    Hostname api1.staging.moreapp.com
+    User ubuntu
+    IdentityFile ~/.ssh/test-keypair.pem
+Host mongo1.s
+    Hostname mongo1.staging.moreapp.com
+    User ubuntu
+    IdentityFile ~/.ssh/test-keypair.pem
+Host mongo2.s
+    Hostname mongo2.staging.moreapp.com
+    User ubuntu
+    IdentityFile ~/.ssh/test-keypair.pem
+Host api2.s
+    Hostname api2.staging.moreapp.com
+    User ubuntu
+    IdentityFile ~/.ssh/test-keypair.pem
+Host web.s
+    Hostname staging.moreapp.com
+    User ubuntu
+    IdentityFile ~/.ssh/test-keypair.pem
+Host oc.web.p
+    Hostname ocdigitals.nl
+    User ubuntu
+    IdentityFile ~/.ssh/ocdigitals-webserver.pem

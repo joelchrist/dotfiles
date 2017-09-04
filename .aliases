@@ -6,3 +6,5 @@ alias ls="ls -G";
 
 alias start-dev='tmuxinator'
 
+alias emacs='emacsclient'
+
