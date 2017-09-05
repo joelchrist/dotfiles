@@ -1,21 +1,3 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-Plugin 'christoomey/vim-tmux-navigator'
-
-Plugin 'xolox/vim-notes'
-Plugin 'xolox/vim-misc'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-
 """"""
 " UI "
 """"""
@@ -40,8 +22,6 @@ set mouse=a
 set number
 set relativenumber
 
-" highlight cursor line
-set cursorline
 
 " ignore whitespace in diff mode
 set diffopt+=iwhite
