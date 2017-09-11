@@ -14,5 +14,12 @@ ln -s ~/dotfiles/git/.gitconfig ~/.gitconfig
 ln -s ~/dotfiles/git/.gitexcludes ~/.gitexcludes
 
 # Vim related dotfiles
-
 ln -s ~/dotfiles/vim/.vimrc ~/.vimrc
+
+# Zsh related dotfiles
+ln -s ~/dotfiles/zsh/.zlogin ~/.zlogin
+ln -s ~/dotfiles/zsh/.zlogout ~/.zlogout
+ln -s ~/dotfiles/zsh/.zpreztorc ~/.zpreztorc
+ln -s ~/dotfiles/zsh/.zprofile ~/.zprofile
+ln -s ~/dotfiles/zsh/.zshenv ~/.zshenv
+ln -s ~/dotfiles/zsh/.zshrc ~/.zshrc
