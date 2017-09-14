@@ -66,3 +66,12 @@ fi
 if [ -f ~/dotfiles/bash/z.sh ]; then
   . ~/dotfiles/bash/z.sh
 fi
+
+#Set NVM related things
+PATH=$HOME/.nvm/versions/node/v6.9.4/bin:$PATH
+export NVM_DIR="$HOME/.nvm"
+
+if [ -f ~/dotfiles/.aliases ]; then
+  . ~/dotfiles/.aliases
+fi
+
