@@ -1,0 +1,5 @@
+alias ls='ls -G'
+alias l='ls -CF'
+alias la='ls -A'
+alias ll='ls -alF'
+alias gvim='gvim -b --remote &>/dev/null'

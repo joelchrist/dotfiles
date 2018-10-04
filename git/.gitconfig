@@ -1,0 +1,39 @@
+[core]
+    editor = vim
+[push]
+    default = current
+[user]
+    name = Joel Christ
+    email = joel@joelchrist.nl
+[color]
+    branch = auto
+    diff = auto
+    status = auto
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+[color "diff"]
+    meta = yellow
+    frag = magenta
+    old = red
+    new = green
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+
+[alias]
+    ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+    lsg = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --graph
+    ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+    lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+    ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+    le = log --oneline --decorate
+    fl = log -u
+    dl = "!git ll -1"
+    dlc = diff HEAD~
+    la = "!git config -l | grep alias | cut -c 7-"
+
+[core]
+    excludesfile = ~/.gitexcludes

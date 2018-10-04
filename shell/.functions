@@ -1,0 +1,30 @@
+# Change working directory to the top-most Finder window location
+function cdf() { # short for `cdfinder`
+	cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')";
+}
+
+function nvminit() {
+	source $(brew --prefix nvm)/nvm.sh
+}
+
+function tm() {
+	tmux attach || tmux new
+}
+function todos() {
+	cwd=`pwd`
+	cd ~/todos
+	vim `ls -tr | tail -1`
+	cd $cwd
+
+}
+
+function notes() {
+	cwd=`pwd`
+	cd ~/notes
+	vim `ls -tr | tail -1`
+	cd $cwd
+}
+
+function title {
+    echo -ne "\033]0;"$*"\007"
+}
