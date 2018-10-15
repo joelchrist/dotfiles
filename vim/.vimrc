@@ -15,6 +15,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'hashivim/vim-terraform'
 Plug 'juliosueiras/vim-terraform-completion'
 Plug 'requalix/detect-indentation'
+Plug 'vim-scripts/vim-auto-save'
 
 call plug#end()
 set rtp+=/usr/local/opt/fzf
@@ -25,7 +26,12 @@ set rtp+=/usr/local/opt/fzf
 let mapleader = ","
 map <leader>d :NERDTreeToggle<CR>
 map <leader>n :FZF<CR>
+map <leader>a :Ag<CR>
+map <leader>f :Lines<CR>
 map <leader>b :Buffers<CR>
+
+nnoremap <C-n> :bnext<CR>
+nnoremap <C-p> :bprevious<CR>
 
 """"""
 " UI "
@@ -126,3 +132,20 @@ if $TERM_PROGRAM =~ "iTerm"
     let &t_SI = "\<Esc>]50;CursorShape=1\x7" " Vertical bar in insert mode
     let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
 endif
+
+" Put plugins and dictionaries in this dir (also on Windows)
+let vimDir = '$HOME/.vim'
+let &runtimepath.=','.vimDir
+" Keep undo history across sessions by storing it in a file
+if has('persistent_undo')
+    let myUndoDir = expand(vimDir . '/undodir')
+    " Create dirs
+    call system('mkdir ' . vimDir)
+    call system('mkdir ' . myUndoDir)
+    let &undodir = myUndoDir
+    set undofile
+endif
+
+" Autosave
+let g:auto_save = 1
+let g:auto_save_in_insert_mode = 0

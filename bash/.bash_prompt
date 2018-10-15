@@ -1,4 +1,4 @@
-export GITAWAREPROMPT=~/dotfiles/git-aware-prompt
+export GITAWAREPROMPT=~/dotfiles/shell/git-aware-prompt
 source ${GITAWAREPROMPT}/main.sh
 short_pwd() {
     cwd=$(pwd | perl -F/ -ane 'print join( "/", map { $i++ < @F - 1 ?  substr $_,0,1 : $_ } @F)')
