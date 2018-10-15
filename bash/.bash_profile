@@ -65,5 +65,12 @@ if [ -r ~/dotfiles/shell/.aliases  ]; then
   source ~/dotfiles/shell/.aliases
 fi
 
+# Load functions
+if [ -r ~/dotfiles/shell/.functions  ]; then
+  source ~/dotfiles/shell/.functions
+fi
+
 load_env global
 load_env machines/$(hostname -s)
+
+link_ssh_agent
