@@ -1,4 +1,10 @@
 #!/usr/bin/env bash
+red=$'\e[1;31m'
+grn=$'\e[1;32m'
+blu=$'\e[1;34m'
+mag=$'\e[1;35m'
+cyn=$'\e[1;36m'
+white=$'\e[0m'
 
 load_env() {
   local env=${1:?no env set}
@@ -17,8 +23,8 @@ load_env() {
       return 1
     else
       . ${envfile}
-      echo "Loading ENV: ${env}"
       export LOAD_ENV="${env} ${LOAD_ENV}"
+      echo "${cyn}Loading ENV: ${white}${env}"
     fi
   else
     echo "Could not find ENV file ${env} with path '${envfile}'"
@@ -68,7 +74,7 @@ load_ssh_key() {
     return 1
   fi
 
-  echo "Loading KEY: ${key}"
+  echo "${red}Loading KEY: ${white}${key}"
 
 
   if ! ssh-add -l | grep ".ssh/${key}" -q; then

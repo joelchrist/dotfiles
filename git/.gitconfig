@@ -37,3 +37,6 @@
 
 [core]
     excludesfile = ~/.gitexcludes
+
+[diff]
+    tool = vimdiff
