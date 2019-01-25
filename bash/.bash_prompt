@@ -1,8 +1,18 @@
 export GITAWAREPROMPT=~/dotfiles/shell/git-aware-prompt
 source ${GITAWAREPROMPT}/main.sh
+
 short_pwd() {
     cwd=$(pwd | perl -F/ -ane 'print join( "/", map { $i++ < @F - 1 ?  substr $_,0,1 : $_ } @F)')
     echo -n $cwd
 }
-export PS1="\[$txtrst\]\$(short_pwd)\[$txtcyn\] \$git_branch\[$txtred\]\$git_dirty\[$txtrst\] \[$txtcyn\]λ \[$txtrst\]"
+
+function terraform_prompt()
+{
+    if [ -d .terraform ]; then
+        workspace="$(command terraform workspace show 2>/dev/null)"
+        echo " (TF: ${workspace})"
+    fi
+}
+
+export PS1="\[$txtrst\]\$(short_pwd)\[$txtcyn\] \$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\[$txtred\]\$(terraform_prompt)\[$txtrst\] \[$txtcyn\]λ \[$txtrst\]"
 

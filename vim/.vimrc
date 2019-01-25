@@ -133,6 +133,7 @@ if $TERM_PROGRAM =~ "iTerm"
     let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
 endif
 
+
 " Put plugins and dictionaries in this dir (also on Windows)
 let vimDir = '$HOME/.vim'
 let &runtimepath.=','.vimDir
@@ -149,3 +150,4 @@ endif
 " Autosave
 let g:auto_save = 1
 let g:auto_save_in_insert_mode = 0
+

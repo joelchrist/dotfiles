@@ -74,3 +74,7 @@ load_env global
 load_env machines/$(hostname -s)
 
 link_ssh_agent
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/joelchrist/.sdkman"
+[[ -s "/Users/joelchrist/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/joelchrist/.sdkman/bin/sdkman-init.sh"
