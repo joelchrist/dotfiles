@@ -26,3 +26,5 @@ function kbash() {
   echo $cmd
   eval $cmd
 }
+
+alias rm='safe-rm '

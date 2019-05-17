@@ -17,7 +17,7 @@ fi
 eval $(/usr/libexec/path_helper -s)
 
 # Set NVM related things
-PATH=$HOME/.nvm/versions/node/v6.9.4/bin:$PATH
+PATH=$HOME/.nvm/versions/node/v11.6.0/bin:$PATH
 export NVM_DIR="$HOME/.nvm"
 
 # Case-insensitive globbing (used in pathname expansion)
@@ -32,6 +32,8 @@ shopt -s histappend;
 for option in autocd globstar; do
 	shopt -s "$option" 2> /dev/null;
 done;
+
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 
 # Add tab completion for many Bash commands
 if which brew &> /dev/null && [ -f "$(brew --prefix)/share/bash-completion/bash_completion" ]; then
@@ -74,6 +76,8 @@ load_env global
 load_env machines/$(hostname -s)
 
 link_ssh_agent
+export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:/usr/local/share/android-sdk/build-tools/28.0.3:/usr/local/share/android-sdk/platform-tools:$PATH"
+export PATH="$HOME/.fastlane/bin:$PATH"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/joelchrist/.sdkman"

@@ -103,10 +103,16 @@ if exists('+termguicolors')
 endif
 
 syntax enable
-set t_Co=256
 set cursorline
 colorscheme onehalfdark
-let g:airline_theme='onehalfdark'
+set background=dark
+if &term =~ '256color'
+  " Disable Background Color Erase (BCE) so that color schemes work
+  " properly within 256-color terminals
+  set t_ut=
+endif
+set t_Co=16
+let g:airline_theme='darkblue'
 " lightline
 " let g:lightline.colorscheme='onehalfdark'
 
