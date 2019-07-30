@@ -82,3 +82,6 @@ export PATH="$HOME/.fastlane/bin:$PATH"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/joelchrist/.sdkman"
 [[ -s "/Users/joelchrist/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/joelchrist/.sdkman/bin/sdkman-init.sh"
+export PATH="/usr/local/opt/terraform@0.11/bin:$PATH"
+export PATH="$PATH:$HOME/go/bin"
+kubeon

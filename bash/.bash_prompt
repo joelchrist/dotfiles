@@ -15,4 +15,3 @@ function terraform_prompt()
 }
 
 export PS1="\[$txtrst\]\$(short_pwd)\[$txtcyn\] \$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\[$txtred\]\$(terraform_prompt)\[$txtrst\] \[$txtcyn\]λ \[$txtrst\]"
-
