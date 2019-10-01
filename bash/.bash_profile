@@ -85,3 +85,6 @@ export SDKMAN_DIR="/Users/joelchrist/.sdkman"
 export PATH="/usr/local/opt/terraform@0.11/bin:$PATH"
 export PATH="$PATH:$HOME/go/bin"
 kubeon
+
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
