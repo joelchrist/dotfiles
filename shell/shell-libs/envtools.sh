@@ -32,7 +32,7 @@ load_env() {
   fi
 
   for var in "$@"; do
-    if [[ ! -v ${var} ]]; then
+    if [[ ! -z ${var} ]]; then
       echo "Could not find required ENV variable: ${var}"
     fi
   done

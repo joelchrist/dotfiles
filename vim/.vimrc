@@ -1,3 +1,9 @@
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -9,7 +15,6 @@ Plug 'airblade/vim-rooter'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-colorscheme-switcher'
 Plug 'junegunn/fzf.vim'
-Plug 'sonph/onehalf',{ 'rtp': 'vim/'}
 Plug 'ap/vim-buftabline'
 Plug 'tpope/vim-fugitive'
 Plug 'hashivim/vim-terraform'
@@ -59,9 +64,6 @@ set mouse=a
 set number
 set relativenumber
 
-" ignore whitespace in diff mode
-set diffopt+=iwhite
-
 " Be able to arrow key and backspace across newlines
 set whichwrap=bs<>[]
 
@@ -104,7 +106,6 @@ endif
 
 syntax enable
 set cursorline
-colorscheme onehalfdark
 set background=dark
 if &term =~ '256color'
   " Disable Background Color Erase (BCE) so that color schemes work
@@ -114,7 +115,6 @@ endif
 set t_Co=16
 let g:airline_theme='darkblue'
 " lightline
-" let g:lightline.colorscheme='onehalfdark'
 
 
 set autowrite

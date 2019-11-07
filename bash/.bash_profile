@@ -2,6 +2,7 @@ source ~/dotfiles/bash/.bash_prompt
 # Set path
 PATH=/usr/local/sbin:$PATH
 export PATH="$HOME/bin:$PATH";
+export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # Load z directory switcher
 if [ -f ~/dotfiles/shell/z.sh ]; then
