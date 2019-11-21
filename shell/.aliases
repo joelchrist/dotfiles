@@ -28,3 +28,5 @@ function kbash() {
 }
 
 alias rm='safe-rm '
+
+alias k='kubectl'

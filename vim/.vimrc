@@ -13,14 +13,13 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'rodjek/vim-puppet'
 Plug 'airblade/vim-rooter'
 Plug 'xolox/vim-misc'
-Plug 'xolox/vim-colorscheme-switcher'
 Plug 'junegunn/fzf.vim'
 Plug 'ap/vim-buftabline'
 Plug 'tpope/vim-fugitive'
 Plug 'hashivim/vim-terraform'
-Plug 'juliosueiras/vim-terraform-completion'
 Plug 'requalix/detect-indentation'
 Plug 'vim-scripts/vim-auto-save'
+Plug 'w0ng/vim-hybrid'
 
 call plug#end()
 set rtp+=/usr/local/opt/fzf
@@ -107,6 +106,7 @@ endif
 syntax enable
 set cursorline
 set background=dark
+colorscheme hybrid
 if &term =~ '256color'
   " Disable Background Color Erase (BCE) so that color schemes work
   " properly within 256-color terminals
