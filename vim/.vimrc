@@ -20,6 +20,9 @@ Plug 'hashivim/vim-terraform'
 Plug 'requalix/detect-indentation'
 Plug 'vim-scripts/vim-auto-save'
 Plug 'w0ng/vim-hybrid'
+Plug 'junegunn/goyo.vim'
+Plug 'amix/vim-zenroom2'
+Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 set rtp+=/usr/local/opt/fzf
