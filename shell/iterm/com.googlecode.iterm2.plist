@@ -48225,7 +48225,7 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 3440 1417 0 0 3440 1417 </string>
+	<string>195 75 1290 877 0 0 2560 1440 </string>
 	<key>NeverWarnAboutShortLivedSessions_0498E04F-9427-4E96-9632-FE5FA93D8418</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_0498E04F-9427-4E96-9632-FE5FA93D8418_selection</key>
@@ -49067,7 +49067,7 @@
 			<key>Shortcut</key>
 			<string></string>
 			<key>Show Status Bar</key>
-			<true/>
+			<false/>
 			<key>Silence Bell</key>
 			<false/>
 			<key>Status Bar Layout</key>
@@ -50252,14 +50252,14 @@
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{0, 0}, {3440, 1440}}</string>
+		<string>{{0, 0}, {1920, 1200}}</string>
 		<key>topLeft</key>
-		<string>{2061, 799}</string>
+		<string>{269, 595}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>133CA9B3-0426-4DF3-8FDE-63883F58FBB2</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>7</integer>
+	<integer>9</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>595255888.500072</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
@@ -50974,11 +50974,16 @@
 	</dict>
 	<key>NoSyncSearchHistory2</key>
 	<array>
-		<string>javasharedresource</string>
-		<string>login</string>
-		<string>metrics</string>
-		<string>notAfter</string>
-		<string>expire</string>
+		<string>deluge</string>
+		<string>wire</string>
+		<string>debiteurn</string>
+		<string>intellij</string>
+		<string>nginx</string>
+		<string>gateway</string>
+		<string>kubernets</string>
+		<string>date</string>
+		<string>creat</string>
+		<string>install fzf</string>
 	</array>
 	<key>NoSyncTipOfTheDayEligibilityBeganTime</key>
 	<real>593637587.20980597</real>

@@ -135,5 +135,5 @@ if [ -r ~/dotfiles/shell/.functions  ]; then
 fi
 
 # Setup NVM
-PATH=$HOME/.nvm/versions/node/v11.6.0/bin:$PATH
+PATH=$HOME/.nvm/versions/node/v11.6.0/bin:~/bin/:$PATH
 export NVM_DIR="$HOME/.nvm"
