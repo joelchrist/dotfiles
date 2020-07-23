@@ -73,10 +73,11 @@ if [ -r ~/dotfiles/shell/.functions  ]; then
   source ~/dotfiles/shell/.functions
 fi
 
+link_ssh_agent
+
 load_env global
 load_env machines/$(hostname -s)
 
-link_ssh_agent
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:/usr/local/share/android-sdk/build-tools/28.0.3:/usr/local/share/android-sdk/platform-tools:$PATH"
 export PATH="$HOME/.fastlane/bin:$PATH"
 
@@ -89,3 +90,5 @@ kubeon
 
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
+
+eval "$(direnv hook zsh)"
