@@ -28,3 +28,7 @@ function notes() {
 function title {
     echo -ne "\033]0;"$*"\007"
 }
+
+jira-sync-week() {
+KTS_KNB_JIRA_SESSION_ID=$1 knb-tempo-sync sync $(date +'%Y-%m-%d' -dlast-monday) $(date +'%Y-%m-%d' -dfriday)
+}
