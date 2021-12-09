@@ -48012,6 +48012,8 @@
 	<false/>
 	<key>DimOnlyText</key>
 	<true/>
+	<key>EnableAPIServer</key>
+	<string>1</string>
 	<key>EnableProxyIcon</key>
 	<true/>
 	<key>FlashTabBarInFullscreen</key>
@@ -50224,7 +50226,7 @@
 	<key>ShowBookmarkName</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
-	<true/>
+	<false/>
 	<key>ShowPaneTitles</key>
 	<false/>
 	<key>SmartPlacement</key>

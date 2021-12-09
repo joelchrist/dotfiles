@@ -119,10 +119,6 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 
-# Load sdkman specific config
-export SDKMAN_DIR="/Users/joelchrist/.sdkman"
-[[ -s "/Users/joelchrist/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/joelchrist/.sdkman/bin/sdkman-init.sh"
-
 # Load envtools
 if [ -r ~/dotfiles/shell/shell-libs/envtools.sh ]; then
   source ~/dotfiles/shell/shell-libs/envtools.sh
@@ -143,9 +139,9 @@ if [ -r ~/dotfiles/shell/.functions  ]; then
 fi
 
 # Setup NVM
-PATH=$HOME/.nvm/versions/node/v11.6.0/bin:~/bin/:$PATH
-export NVM_DIR="$HOME/.nvm"
+PATH=~/bin/:$PATH
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 . ~/.asdf/plugins/java/set-java-home.zsh
+
